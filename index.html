@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Giuliano Bordon</title>
+  <meta name="description" content="Portafolio de Giuliano Bordon: Automatización de procesos, desarrollo de menús interactivos y chatbots para empresas.">
+  <meta name="keywords" content="automatización, chatbots, desarrollo web, inteligencia artificial, portafolio">
+  <meta name="author" content="Giuliano Bordon">
+  <link rel="stylesheet" href="style.css?v=1.2">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Giuliano Bordon</h1>
+      <p>Trabajando más para que vos trabajes menos</p>
+      <a href="#about" class="btn-scroll">Conocé más</a>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sobre mí -->
+  <main>
+    <section id="about" class="fade-in">
+      <div class="container">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy Giuliano Bordon, estudiante universitario de Ingeniería en Informática.
+          Actualmente me encuentro trabajando en este proyecto, ya que combina el trabajo con lo que me apasiona.
+          Mi objetivo es ayudar a pequeñas y medianas empresas a optimizar sus procesos de contacto con clientes,
+          brindando soluciones digitales creativas y cercanas. No solo entrego tecnología, sino que acompaño a cada cliente
+          en su proceso de transformación digital.
+        </p>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="services" class="fade-in">
+      <div class="container">
+        <h2>¿Qué servicios ofrezco?</h2>
+        <div class="services">
+          <div class="card">
+            <h3>Automatización de procesos</h3>
+            <p>Optimizo tareas repetitivas mediante herramientas inteligentes, ahorrando tiempo y costos.</p>
+          </div>
+          <div class="card">
+            <h3>Desarrollo de menús adaptables</h3>
+            <p>Creo menús interactivos integrados con mis otros servicios para captar la atención del cliente.</p>
+          </div>
+          <div class="card">
+            <h3>Automatización de chats</h3>
+            <p>Ofrezco atención al cliente automatizada para reservas, consultas o lo que necesites.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="fade-in">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <div class="projects">
+          <div class="card">
+            <h3>Landing Page Inteligente</h3>
+            <p>Diseño de landing page con respuestas automáticas para que tus clientes obtengan atención al instante.</p>
+          </div>
+          <div class="card">
+            <h3>Automatización de Tareas</h3>
+            <p>Implementaciones de IA que reducen procesos de 3 horas a solo 10 minutos.</p>
+          </div>
+          <div class="card">
+            <h3>Organización de Tareas</h3>
+            <p>Agendas automáticas, respuestas rápidas, páginas interactivas y menús virtuales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="fade-in">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>Podes escribirme directamente a través de este formulario o por mis redes:</p>
+        
+        <!-- Formulario de contacto -->
+        <form action="https://formspree.io/f/xzzandrd" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="_replyto" placeholder="tu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Escribí tu consulta aquí..." required></textarea>
+          </div>
+          <button type="submit" class="btn-scroll">Enviar</button>
+          
+        </form>
+
+        <!-- Links alternativos -->
+        <ul>
+          <li><a href="https://www.instagram.com/23bordon/" target="_blank">Instagram</a></li>
+          <li><a href="https://wa.me/1132385820" target="_blank">WhatsApp</a></li>
+          <li>Email: <a href="mailto:bgiuliano.ia@gmail.com">bgiuliano.ia@gmail.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Giuliano Bordon | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animación fade-in al hacer scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/1132385820" class="whatsapp-btn" target="_blank">💬</a>
+
+</body>
+</html>
